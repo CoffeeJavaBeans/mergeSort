@@ -1,6 +1,5 @@
 function split(wholeArray) {
   let halflen = Math.floor(wholeArray.length / 2);
-  //console.log(halflen);
   let firstHalf = [];
   let secondHalf = [];
   for (let i = 0; i < halflen; i++) {
@@ -27,6 +26,17 @@ function merge(arr1, arr2) {
 //let arrr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 //console.log(split(arrr));
 
-let arr1 = [1, 4, 6];
-let arr2 = [2, 3, 7, 8];
-console.log(merge(arr1, arr2));
+// let arr1 = [1, 4, 6];
+// let arr2 = [2, 3, 7, 8];
+// console.log(merge(arr1, arr2));
+
+function mergeSort(array) {
+  if (array.length === 1) {
+    return array;
+  }
+  let [arr1, arr2] = split(array);
+  return merge(mergeSort(arr1), mergeSort(arr2));
+}
+let arrrrr = [9, 7, 3, 5, 6, 7, 8, 1];
+
+console.log(mergeSort(arrrrr));
